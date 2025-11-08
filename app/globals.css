@@ -1,0 +1,45 @@
+@import '../styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-outline;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+    background-image: var(--grad-aurora);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-semibold;
+  }
+}
+
+@layer utilities {
+  .focus-orbit {
+    @apply outline-none ring-2 ring-orbit-1 ring-offset-2 ring-offset-bg;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Skip to content link */
+.skip-link {
+  @apply absolute left-4 top-4 z-50 -translate-y-20 rounded-lg bg-primary px-4 py-2 text-primary-contrast transition-transform focus:translate-y-0;
+}
